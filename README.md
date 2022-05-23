@@ -36,8 +36,8 @@ PROJECT_ID, PROJECT_API_KEY, PROJECT_API_SECRET is the id of project you get aft
 
 #### Example 
 ```javascript
-const { Drax } = require("../drax");
-const { Keystore } = require("../keystore");
+const { Drax } = require("@applica-of-things/drax-sdk");
+const { Keystore } = require("@applica-of-things/drax-sdk/keystore");
 const config = require("./config.json");
 const { HTSensor } = require("./listeners/htsensor");
 const { Rele } = require("./listeners/rele");

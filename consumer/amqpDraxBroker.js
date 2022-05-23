@@ -94,7 +94,7 @@ class AmqpDraxBroker{
             }
             stateRequest.state = _s;
         }
-        console.log(stateRequest)
+        console.log("State Request: ", stateRequest)
 
         var exchange = 'amq.topic';
 
@@ -103,7 +103,7 @@ class AmqpDraxBroker{
         });
         this.channel.publish(exchange, `${this.params.projectId}.requests.states`, Buffer.from(JSON.stringify(stateRequest)))
 
-        console.log(payload);
+        console.log("Encripted Payload: ", payload);
     }
 
 
