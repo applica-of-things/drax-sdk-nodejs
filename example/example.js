@@ -22,7 +22,7 @@ var listeners = [trv, rele, htsensor]
 var drax  = new Drax(params)
 drax.start()
   .then(() => {
-    var state = {dato: "Hello World!"}
+    var state = {dato: 28}
     drax.setState(3393, "homematicip:gateway:test", state, false)
 
     drax.addConfigurationListener("configurations/homematicip", listeners)

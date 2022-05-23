@@ -1,6 +1,6 @@
 # drax-sdk-nodejs
 
-This pakage this package allows interfacing to the Drax IoT platform (https://draxcloud.com/)
+This package allows interfacing to the Drax IoT platform (https://draxcloud.com/)
 To use this plugin you need to create a project on the platform. After project creation you must use API_KEY and API_SECRET of project to:
  - publish state on node;
  - listen the node configuration;
