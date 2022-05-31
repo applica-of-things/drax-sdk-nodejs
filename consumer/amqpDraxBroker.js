@@ -85,14 +85,18 @@ class AmqpDraxBroker{
             var padded_data_size = crypto_pkcs7CalculatePaddedSize(payload, payload.length);
             var signed_data = new Uint8Array(padded_data_size);
 
-            var privateKey = new Keystore().instance().getPrivateKey(nodeId).privateKey;
-            var publicKey = new Keystore().instance().getCloudPublicKey();
-            var len = crypto_sign(privateKey, publicKey, payload, payload.length, signed_data);
-            var _s = []
-            for (var i = 0; i < signed_data.length; i++) {
-                _s.push(signed_data[i]);
+            try{
+                var privateKey = new Keystore().instance().getPrivateKey(nodeId).privateKey;
+                var publicKey = new Keystore().instance().getCloudPublicKey();
+                var len = crypto_sign(privateKey, publicKey, payload, payload.length, signed_data);
+                var _s = []
+                for (var i = 0; i < signed_data.length; i++) {
+                    _s.push(signed_data[i]);
+                }
+                stateRequest.state = _s;
+            } catch(e) {
+                console.log(e)
             }
-            stateRequest.state = _s;
         }
         console.log("State Request: ", stateRequest)
 
@@ -133,19 +137,23 @@ class AmqpDraxBroker{
                 }
 
                 var received_data = new Buffer.alloc(signed_data.length);
-
-                var privateKey = new Keystore().instance().getPrivateKey(JSON.parse(msg.content).nodeId).privateKey;
-                var publicKey = new Keystore().instance().getCloudPublicKey();
-
-                var original_len = crypto_unsign(privateKey, publicKey, payloadEncripted, payloadEncripted.length, received_data);
-                var response = JSON.parse(msg.content)
-                response.configuration = JSON.parse(received_data.slice(0, original_len))
+                try{
+                    var privateKey = new Keystore().instance().getPrivateKey(JSON.parse(msg.content).nodeId).privateKey;
+                    var publicKey = new Keystore().instance().getCloudPublicKey();
+    
+                    var original_len = crypto_unsign(privateKey, publicKey, payloadEncripted, payloadEncripted.length, received_data);
+                    var response = JSON.parse(msg.content)
+                    response.configuration = JSON.parse(received_data.slice(0, original_len))
+                    
+                    listeners.forEach(listener => {
+                        if (_.isFunction(listener.run)){
+                            listener.run(response)
+                        }
+                    })
+                }catch(e) {
+                    console.log(e)
+                }
                 
-                listeners.forEach(listener => {
-                    if (_.isFunction(listener.run)){
-                        listener.run(response)
-                    }
-                })
             }, {
                     noAck: true
                 }
