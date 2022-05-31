@@ -8,7 +8,7 @@ To use this plugin you need to create a project on the platform. After project c
 ### Installation 
 To install the package you need to run the following command:
 
-`$ npm install @applica-of-things/drax-sdk`
+`$ npm install drax-sdk-nodejs`
 
 ### Usage 
 Before use methods of sdk you need to do create a configuration file (config.json) with this structure:
