@@ -1,6 +1,6 @@
 const amqp = require('amqplib/callback_api');
 const _ = require('underscore');
-const { crypto_sign, crypto_pkcs7CalculatePaddedSize, crypto_unsign } = require('../ecdh/crypto');
+const { crypto_sign, crypto_pkcs7CalculatePaddedSize, crypto_unsign } = require('drax-ecdh');
 const { Keystore } = require('../keystore');
 /**
  * @AmqpDraxBroker

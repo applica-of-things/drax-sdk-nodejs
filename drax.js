@@ -1,4 +1,3 @@
-var q = 'tasks';
 const AmqpDraxBroker = require("./consumer/amqpDraxBroker")
 
 class Drax {

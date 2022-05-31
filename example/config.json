@@ -1,14 +1,30 @@
 {
     "draxPublicKey": "bb099d6dce1a953c7c5d2380815ee02ea191b39206000000ceefb3c222b480459556ce440379cef89db0ccfc04000000",
     "project":{
-        "id": "node-sdk-development-65447",
-        "apiKey": "ed2b5e96b99f44588647752cd543c84d",
-        "apiSecret": "0e302e419e30bf5615f05ef2acc89028bae05330b2f136290094513178dcf674"
+        "id": "demo-nordcom-31808",
+        "apiKey": "b53bc49166fd4f2996d3b16665c41ba7",
+        "apiSecret": "3327b7d991a1e611b5f5adc8a103e01aee41cab2c7073350287aff76a7bb07a0"
     },
     "keys": [
         {
             "nodeId": 3393,
-            "privateKey": "a1cae05af53e465f959d9917639834311e5f902203000000"
+            "privateKey": "a1cae05af53e465f959d9917639834311e5f902203000000",
+            "publicKey": ""
+        },
+        {
+            "nodeId": 3397,
+            "privateKey": "901dd5c7958bc962ba7a2c0b1173a4a1b7a3075603000000",
+            "publicKey": "9194319862e521c3db4d4926e51d7937487edf59060000006b7754442700421a10bb332fd05cd9c6ef83678e06000000"
+        },
+        {
+            "nodeId": 3398,
+            "privateKey": "6e9de7f74e8761101a398a66586961d69257889d01000000",
+            "publicKey": "1ffc22582205d8f8d2ba4e04074be6436c866dd0060000008def5c34d994fe9c6ac7ad879f0204e205a1e54b00000000"
+        },
+        {
+            "nodeId": 3420,
+            "privateKey": "91aff7cb16634cc0c101480cf4b9f252fa0aeb9e00000000",
+            "publicKey": "fa7d913be13a3e95a043a335b3b118d85142462a06000000d727fdf32a5922e18535505a8ccc65dd194b954a06000000"
         }
 
     ]
