@@ -105,9 +105,7 @@ class AmqpDraxBroker{
         this.channel.assertExchange(exchange, 'topic', {
             durable: true
         });
-        this.channel.publish(exchange, `${this.params.projectId}.requests.states`, Buffer.from(JSON.stringify(stateRequest)))
-
-        console.log("Encripted Payload: ", payload);
+        this.channel.publish(exchange, `${this.params.projectId}.requests.states`, Buffer.from(JSON.stringify(stateRequest)))        
     }
 
 
@@ -146,8 +144,8 @@ class AmqpDraxBroker{
                     response.configuration = JSON.parse(received_data.slice(0, original_len))
                     
                     listeners.forEach(listener => {
-                        if (_.isFunction(listener.run)){
-                            listener.run(response)
+                        if (_.isFunction(listener.configuration)){
+                            listener.configuration(response)
                         }
                     })
                 }catch(e) {
