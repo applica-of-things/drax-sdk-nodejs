@@ -130,14 +130,14 @@ class AmqpDraxBroker{
                 
                 if (JSON.parse(msg.content).cryptographyDisabled){
                     var response = JSON.parse(msg.content)
-                    response.configuration = JSON.parse(Buffer.from(JSON.stringify(JSON.parse(msg.content).configuration), "base64"));
+                    response.configuration = JSON.parse(Buffer.from(JSON.parse(msg.content).configuration, "base64"));
                     listeners.forEach(listener => {
                         if (_.isFunction(listener.configuration)){
                             listener.configuration(response)
                         }
                     })
                 } else {
-                    var signed_data = Buffer.from(JSON.stringify((JSON.parse(msg.content).configuration)), "base64");
+                    var signed_data = Buffer.from(JSON.parse(msg.content).configuration, "base64");
                     var payloadEncripted = []
                     for (var i = 0; i < signed_data.length; i++) {
                         payloadEncripted.push(signed_data[i]);
