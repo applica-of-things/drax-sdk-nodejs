@@ -1,31 +1,42 @@
 {
+    "version": "1.0.0",
     "draxPublicKey": "bb099d6dce1a953c7c5d2380815ee02ea191b39206000000ceefb3c222b480459556ce440379cef89db0ccfc04000000",
-    "project":{
-        "id": "demo-nordcom-31808",
-        "apiKey": "b53bc49166fd4f2996d3b16665c41ba7",
-        "apiSecret": "3327b7d991a1e611b5f5adc8a103e01aee41cab2c7073350287aff76a7bb07a0"
+    "sgtinPath": "/var/hm_mode",
+    "ccu3": {
+        "interval_min": 2,
+        "address": "192.168.43.132",
+        "port": 2010,
+        "credentials": {
+            "user": "Admin",
+            "pass": "admin"
+        }
+    },
+    "project": {
+        "id": "node-sdk-development-65447",
+        "apiKey": "ed2b5e96b99f44588647752cd543c84d",
+        "apiSecret": "0e302e419e30bf5615f05ef2acc89028bae05330b2f136290094513178dcf674"
     },
     "keys": [
         {
-            "nodeId": 3393,
-            "privateKey": "a1cae05af53e465f959d9917639834311e5f902203000000",
-            "publicKey": ""
+            "nodeId": 3431,
+            "type": "trv",
+            "address": "00201D89A8B051",
+            "privateKey": "ba5c2b70dbd116a9a4e8344855410d1a118cb9f201000000",
+            "publicKey": "47c8f8a0109e0c1e08af50fde7b3995bf133f08104000000da4eb283a666dba2d412a1a2811ba91a57e18cdf07000000"
         },
         {
-            "nodeId": 3397,
-            "privateKey": "901dd5c7958bc962ba7a2c0b1173a4a1b7a3075603000000",
-            "publicKey": "9194319862e521c3db4d4926e51d7937487edf59060000006b7754442700421a10bb332fd05cd9c6ef83678e06000000"
+            "nodeId": 3432,
+            "type": "trv",
+            "address": "00201D89A8B0C1",
+            "privateKey": "88403a8785db182dc4d12b8ac79580e5abea1d4a01000000",
+            "publicKey": "72365df035232b152cdb7e9b60140d38a2417de607000000cd26926eb294654040b173c9e8104e07cf0d77ad07000000"
         },
         {
-            "nodeId": 3398,
-            "privateKey": "6e9de7f74e8761101a398a66586961d69257889d01000000",
-            "publicKey": "1ffc22582205d8f8d2ba4e04074be6436c866dd0060000008def5c34d994fe9c6ac7ad879f0204e205a1e54b00000000"
-        },
-        {
-            "nodeId": 3420,
-            "privateKey": "91aff7cb16634cc0c101480cf4b9f252fa0aeb9e00000000",
-            "publicKey": "fa7d913be13a3e95a043a335b3b118d85142462a06000000d727fdf32a5922e18535505a8ccc65dd194b954a06000000"
+            "nodeId": 3433,
+            "type": "gtw",
+            "address": "3014F711A0001F9D89A98A50",
+            "privateKey": "19c6aaf3bb8b98e39aa0a155afc126e9724c819002000000",
+            "publicKey": "c56b0a0890917a35f265d246fb363fc403dbced9070000004f5b1171aa6c68300498dbb2f34a416e76a689ea00000000"
         }
-
     ]
 }

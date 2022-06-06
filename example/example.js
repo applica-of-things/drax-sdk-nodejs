@@ -22,9 +22,21 @@ var listeners = [trv, rele, htsensor]
 var drax  = new Drax(params)
 drax.start()
   .then(() => {
-    var state = {temperature: 23, battery: 78}
-    drax.setState(3420, null, state, false)
 
-    drax.addConfigurationListener("configurations/homematicip", listeners)
+    var node = {
+      urn: "trv1:gtw:address",
+      supportedTypes: ["hm-trv"],
+      configurationPublishTopic: "configurations/hmip",
+      statePublishTopic: "states/hmip",
+      initialState: {},
+      name: "test1"
+  }
+
+  drax.handshake(node)
+
+  var state = {temperature: 23, battery: 78}
+  drax.setState(3420, null, state, false)
+
+  drax.addConfigurationListener("configurations/homematicip", listeners)
   })
   .catch(e => {})
