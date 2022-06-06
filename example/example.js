@@ -33,6 +33,8 @@ drax.start()
   }
 
   drax.handshake(node)
+  .then((res) => console.log(res.data))
+  .catch((err) => console.log(err))
 
   var state = {temperature: 23, battery: 78}
   drax.setState(3420, null, state, false)

@@ -1,3 +1,4 @@
+const { reject } = require("underscore")
 const DraxClient = require("./backend/draxClient")
 const AmqpDraxBroker = require("./consumer/amqpDraxBroker")
 
@@ -25,7 +26,11 @@ class Drax {
   }
 
   handshake(node){
-    this.draxClient.handshake(node)
+    return new Promise((resolve, reject) => {
+      this.draxClient.handshake(node)
+      .then((res) => resolve(res))
+      .catch((err) => reject(err))
+    })
   }
 }
 
