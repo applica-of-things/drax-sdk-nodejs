@@ -111,7 +111,7 @@ class AmqpDraxBroker{
 
 
     addConfigurationListener(topic, listeners = []){
-        var projectTopic = this.params.config.project.id + "." + topic.replace("/", ".")
+        var projectTopic = this.params.config.project.id + "." + topic.replace(/\//g, ".")
         console.log("Consuming topic: ", projectTopic)
         var exchange = 'amq.topic';
         var _q = null
